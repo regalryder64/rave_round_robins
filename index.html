@@ -108,9 +108,18 @@
                 </p>
 
                 <h5>Loss Curves</h5>
-                <img src="assets/m1_fullband.png" alt="Blah" width="500" />
-                <img src="assets/m1_multiband.png" alt="Model 1 loss curve" width="500" />
-                <img src="assets/m1_regularization.png" alt="Model 1 loss curve" width="500" />
+                <figure>
+                <img src="assets/m1_fullband.png" alt="Full Band Loss Curve" width="200" />
+                <figcaption>Full Band Spectral Distance Loss.</figcaption>
+                </figure>
+                <figure>
+                <img src="assets/m1_multiband.png" alt="Multi Band Loss Curve" width="200" />
+                <figcaption>Multi Band Spectral Distance Loss.</figcaption>
+                </figure>
+                <figure>
+                <img src="assets/m1_regularization.png" alt="Regularization Curve" width="200" />
+                <figcaption>Regularization Curve.</figcaption>
+                </figure>
                 <h5>Audio Sample</h5>
                 <audio controls>
                     <source src="audio/model1_sample.wav" type="audio/wav" />
@@ -125,6 +134,25 @@
                   hours. This model did not reach Phase 2, and the output was
                   incomplete.
                 </p>
+
+                <h5>Loss Curves</h5>
+                <figure>
+                <img src="assets/m2_fullband.png" alt="Full Band Loss Curve" width="200" />
+                <figcaption>Full Band Spectral Distance Loss.</figcaption>
+                </figure>
+                <figure>
+                <img src="assets/m2_multiband.png" alt="Multi Band Loss Curve" width="200" />
+                <figcaption>Multi Band Spectral Distance Loss.</figcaption>
+                </figure>
+                <figure>
+                <img src="assets/m2_regularization.png" alt="Regularization Curve" width="200" />
+                <figcaption>Regularization Curve.</figcaption>
+                </figure>
+                <h5>Audio Sample</h5>
+                <audio controls>
+                    <source src="audio/model1_sample.wav" type="audio/wav" />
+                    Your browser does not support the audio element.
+                </audio>
               </div>
 
               <!-- <div class="subcard"> -->
@@ -136,6 +164,34 @@
                   RAVE v2_small with 500 padded 4-second samples.
                 </p>
 
+                <figure>
+                <img src="assets/m3_fullband.png" alt="Regularization Curve" width="200" />
+                <figcaption>Full Band Spectral Distance Loss.</figcaption>
+                </figure>
+                <figure>
+                <img src="assets/m3_multiband.png" alt="Regularization Curve" width="200" />
+                <figcaption>Multi Band Spectral Distance Loss.</figcaption>
+                </figure>
+                </figure>
+                <img src="assets/m3_regularization.png" alt="Regularization Curve" width="200" />
+                <figcaption>Regularization Curve.</figcaption>
+                </figure>
+                <figure>
+                <img src="assets/m3_adversarial.png" alt="Full Band Loss Curve" width="200" />
+                <figcaption>Adversarial.</figcaption>
+                </figure>
+                <figure>
+                <img src="assets/m3_feature_matching.png" alt="Multi Band Loss Curve" width="200" />
+                <figcaption>Feature Matching</figcaption>
+                </figure>
+                <img src="assets/m3_pred_fake.png" alt="Regularization Curve" width="200" />
+                <figcaption>Centroid of Real data in the last layer's embedding of the discriminator.</figcaption>
+                </figure>
+                </figure>
+                <img src="assets/m3_pred_real.png" alt="Regularization Curve" width="200" />
+                <figcaption>Centroid of Fake data in the last layer's embedding of the discriminator.</figcaption>
+                </figure>
+
                 <div class="nested">
                   <h5>Model 3.0</h5>
                   <p>
@@ -143,6 +199,11 @@
                     this point, the electric snare sounded good, but the
                     acoustic snare was still subpar.
                   </p>
+                  <h5>Audio Sample</h5>
+                  <audio controls>
+                      <source src="audio/model1_sample.wav" type="audio/wav" />
+                      Your browser does not support the audio element.
+                  </audio>
                 </div>
 
                 <div class="nested">
@@ -152,6 +213,11 @@
                     It also converged, but did not reach Phase 2. The results
                     were similar to Model 3.0 with somewhat better performance.
                   </p>
+                  <h5>Audio Sample</h5>
+                  <audio controls>
+                    <source src="audio/model1_sample.wav" type="audio/wav" />
+                    Your browser does not support the audio element.
+                  </audio>
                 </div>
 
                 <div class="nested">
@@ -162,6 +228,11 @@
                     during GAN training. The output degenerated to a single sound
                     where each snare sample had the same yield.
                   </p>
+                  <h5>Audio Sample</h5>
+                  <audio controls>
+                    <source src="audio/model1_sample.wav" type="audio/wav" />
+                    Your browser does not support the audio element.
+                  </audio>
                 </div>
               </div>
 
@@ -171,9 +242,42 @@
                   Trained on RAVE v2_small with 10,000 samples. They were
                   preprocessed into 500 files with 20 samples in each file. Each
                   file was 30 seconds long. This model reached Phase 2 after
-                  convergence. Further training details and results can be added
-                  here.
+                  convergence 7.5 hours of training. We stopped training after another
+                  30 hours in Phase 2.
                 </p>
+                <h5>Loss Curves</h5>
+                <figure>
+                <img src="assets/m4_fullband.png" alt="Regularization Curve" width="200" />
+                <figcaption>Full Band Spectral Distance Loss.</figcaption>
+                </figure>
+                <figure>
+                <img src="assets/m4_multiband.png" alt="Regularization Curve" width="200" />
+                <figcaption>Multi Band Spectral Distance Loss.</figcaption>
+                </figure>
+                </figure>
+                <img src="assets/m4_regularization.png" alt="Regularization Curve" width="200" />
+                <figcaption>Regularization Curve.</figcaption>
+                </figure>
+                <figure>
+                <img src="assets/m4_adversarial.png" alt="Full Band Loss Curve" width="200" />
+                <figcaption>Adversarial.</figcaption>
+                </figure>
+                <figure>
+                <img src="assets/m4_feature_matching.png" alt="Multi Band Loss Curve" width="200" />
+                <figcaption>Feature Matching</figcaption>
+                </figure>
+                <img src="assets/m4_pred_fake.png" alt="Regularization Curve" width="200" />
+                <figcaption>Centroid of Real data in the last layer's embedding of the discriminator.</figcaption>
+                </figure>
+                </figure>
+                <img src="assets/m4_pred_real.png" alt="Regularization Curve" width="200" />
+                <figcaption>Centroid of Fake data in the last layer's embedding of the discriminator.</figcaption>
+                </figure>
+                <h5>Audio Sample</h5>
+                <audio controls>
+                    <source src="audio/model1_sample.wav" type="audio/wav" />
+                    Your browser does not support the audio element.
+                </audio>
               </div>
             </div>
           </div>
