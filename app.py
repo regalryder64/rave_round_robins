@@ -20,10 +20,10 @@ def normalize_audio(wav_tensor, target_db=-6.0):
 
 # 2. Define your local models here
 MODELS = {
-    "model_4_final": "model_4.ts",
-    "model_4_endphase1": "m4_endphase1.ts",
-    "model_4_midphase2": "m4_midphase2.ts",
-    "model_3.2": "SundayMorning2.ts", 
+    "model_4_final": "models/model_4.ts",
+    "model_4_endphase1": "models/m4_endphase1.ts",
+    "model_4_midphase2": "models/m4_midphase2.ts",
+    "model_3.2": "models/SundayMorning2.ts", 
 }
 
 # Cache the model so it doesn't reload every time you click a button
@@ -66,39 +66,54 @@ if uploaded_file is not None:
     # Add batch dimension for the model: shape becomes (1, 1, Length)
     wav = wav.unsqueeze(0)
     
+    # 1. Initialize Session State memory (Put this right above your Generate button)
+    if 'generated_tracks' not in st.session_state:
+        st.session_state.generated_tracks = []
+
+    # THE GENERATION BLOCK
     if st.button("Generate Variations"):
         with st.spinner("Crunching latent math..."):
             
-            # Load the selected model
+            # Clear the old tracks from memory before making new ones
+            st.session_state.generated_tracks = []
+            
             model = load_model(selected_model)
             
             with torch.no_grad():
-                # Encode the audio into RAVE's compressed latent space (z)
                 z = model.encode(wav)
                 
-                st.subheader("Generated Variations (Normalized to -6 dB)")
-                # Create a visual grid for the output audio players
-                cols = st.columns(2) 
-                
                 for i in range(int(n_samples)):
-                    # Generate pure random noise matching the shape of the latent audio
                     noise = torch.randn_like(z)
-                    
-                    # Add the noise to the original latent representation, scaled by your slider
                     z_varied = z + (noise * variance)
-                    
-                    # Decode the altered latent space back into an audio waveform
                     generated_wav = model.decode(z_varied).squeeze(0)
-                    
-                    # NORMALIZE THE GENERATED OUTPUT AUDIO TO -6 dB
                     generated_wav = normalize_audio(generated_wav, target_db=-6.0)
                     
-                    # Save the new waveform to a temporary buffer to play in the browser
+                    # Save to buffer and extract the raw bytes
                     buffer = io.BytesIO()
                     torchaudio.save(buffer, generated_wav, sr, format="wav")
-                    buffer.seek(0)
                     
-                    # Place the audio player in the grid
-                    with cols[i % 2]:
-                        st.write(f"Variation {i+1}")
-                        st.audio(buffer, format='audio/wav')
+                    # Store the raw audio bytes and the filename in session state
+                    st.session_state.generated_tracks.append({
+                        "bytes": buffer.getvalue(),
+                        "filename": f"snare_var_{variance}_{i+1}.wav"
+                    })
+
+    # THE DISPLAY BLOCK (Notice this is moved completely OUTSIDE the button's indentation!)
+    if len(st.session_state.generated_tracks) > 0:
+        st.subheader("Generated Variations (Normalized to -6 dB)")
+        cols = st.columns(2) 
+        
+        for i, track_data in enumerate(st.session_state.generated_tracks):
+            with cols[i % 2]:
+                st.write(f"Variation {i+1}")
+                # Play the audio from the saved bytes
+                st.audio(track_data["bytes"], format='audio/wav')
+                
+                # Download button using the saved bytes and filename
+                st.download_button(
+                    label="⬇️ Download WAV",
+                    data=track_data["bytes"],
+                    file_name=track_data["filename"],
+                    mime="audio/wav",
+                    key=f"download_btn_{i}" # Keys ensure Streamlit doesn't confuse multiple buttons
+                )
