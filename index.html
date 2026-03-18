@@ -4,8 +4,9 @@
     <title>RAVE Round Robins</title>
   </head> -->
   <body>
-    <h1>RAVE Round Robins</h1>
-    <!-- <p>RAVE Round Robins</p> -->
+    <div>
+      <h1>RAVE Round Robins</h1>
+    </div>
 
     <div>
       <h2>Project Members</h2>
@@ -27,7 +28,6 @@
 
     <div>
       <h2>Project Synopsis</h2>
-    
       <p>
         <h3>Movation</h3>
         <!-- Explain the problem your project is trying to solve and why it matters.
@@ -78,7 +78,11 @@
         </div>
         <div>
             <h4>Model 1</h4>
-            <div>
+            <p>
+                Trained on RAVE v2 with 500 4-second samples (padded) for 2 hours.
+                This model did not reach Phase 2, and the ouptut was staticky.
+            </p>
+            <!-- <div>
               <h5>Parameters</h5>
               <p>
                 This will contain the preprocessing steps, the number of sample used, 
@@ -96,11 +100,15 @@
               <p>
                 This will contain the audio output 
               </p>
-            </div>
+            </div> -->
         </div>
         <div>
             <h4>Model 2</h4>
-            <div>
+            <p>
+                Trained on RAVE v3 with 500 4-second samples (padded) for 4 hours.
+                This model did not reach Phase 2, and the ouptut was 
+            </p>
+            <!-- <div>
               <h5>Parameters</h5>
               <p>
                 This will contain the preprocessing steps, the number of sample used, 
@@ -118,33 +126,47 @@
               <p>
                 This will contain the audio output 
               </p>
-            </div>
+            </div> -->
         </div>
         <div>
             <h4>Model 3</h4>
+            <p>
+                This model can be broken down into 3 submodels that were saved at various stages
+                of training. The main model was trained on RAVE v2_small with 500 4-second samples
+                (padded) for 2 hours.
+            </p>
             <div>
-              <h5>Parameters</h5>
+              <h5>Model 3.0</h5>
               <p>
-                This will contain the preprocessing steps, the number of sample used, 
-                the number of hours trained, 
+                  This model was pulled at 3.75 hours of training. The loss converged. At this 
+                  point, the electric snare sounded good, but the acoustic snare was still subpar.
               </p>
             </div>
             <div>
-              <h5>Training</h5>
+              <h5>Model 3.1</h5>
               <p>
-                This will contain the loss graphs, the phases reached, and loss graph
+                This model was pulled after another 4.5 hours of training from model 3.0. Since it
+                was built off of the previous model, it also converged. This model did not, however, 
+                reach phase 2. The results were similar to model 3.0, but had overall better performance.
               </p>
             </div>
             <div>
-              <h5>Output</h5>
+              <h5>Model 3.2</h5>
               <p>
-                This will contain the audio output 
+                This model was pulled after another 5.25 hours of training from model 3.1. This model 
+                reached phase 2 after converging, but failed during GAN training. The output degenerated
+                to a single sound where each snare sample had the same yield. 
               </p>
             </div>
         </div>
         <div>
             <h4>Model 4</h4>
-            <div>
+            <p>
+                Trained on RAVE v2_small with 10,000 samples. They were preprocessed into 500 files with 
+                20 samples in each file. Each file was 30 seconds. This model reach phase 2 after X hours 
+                of training and convergence. It was stopped X hours of training into phase 2.
+            </p>
+            <!-- <div>
               <h5>Parameters</h5>
               <p>
                 This will contain the preprocessing steps, the number of sample used, 
@@ -162,7 +184,7 @@
               <p>
                 This will contain the audio output 
               </p>
-            </div>
+            </div> -->
         </div>
 
       </p>
