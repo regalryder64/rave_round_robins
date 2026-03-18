@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <!-- <head>
     <title>RAVE Round Robins</title>
-  </head>
+  </head> -->
   <body>
-    <h1>Hello World</h1>
-    <p>Testing github pages</p>
+    <h1></h1>
+    <p>>RAVE Round Robins</p>
 
     <div>
       <h2>Project Members</h2>
@@ -23,6 +23,41 @@
       <h2>Course Information</h2>
       <p>CS 352 Northwestern University</p>
       <p>Professor Bryan Pardo</p>
+    </div>
+
+    <div>
+      <h2>Project Synopsis</h2>
+    
+      <p>
+        <strong>Movation</strong><br>
+        <!-- Explain the problem your project is trying to solve and why it matters.
+        Describe why someone should care about this problem. -->
+        When programming drums in a DAW, repeated hits often create the “machine gun effect,” 
+        where identical samples make the rhythm sound robotic. Real drummers naturally vary 
+        timing, velocity, and tone with each strike, but computers replay the exact same 
+        sample unless multiple recordings are used in a round-robin setup. Creating enough 
+        recordings to fully avoid this effect can require hundreds of nearly identical takes, 
+        which is time-consuming and impractical. This project is interesting because it replaces
+        the traditional round-robin recording process with a generative model that produces
+        new variations automatically. 
+      </p>
+
+      <p>
+        <strong>High-Level Approach</strong><br>
+        <!-- Describe what your project does in broad terms. Focus on the main idea
+        rather than implementation details. -->
+        Our project used a dataset sourced from Kaggle (LINK). From this dataset, we used 10,000
+        one-shot recordings of various snare drums. We preprocessed the data by concatenating the 
+        audio into longer files. Then, we fed the audio into different versions of RAVE to train
+        a model to produce slightly different snare sounds. Finally, we decoded the output into audio.
+      </p>
+
+      <p>
+        <strong>Build and Testing</strong><br>
+        <!-- Explain how you built and tested the project. Mention the dataset,
+        evaluation method, or criteria you used to measure success. -->
+
+      </p>
     </div>
   </body>
 </html>
