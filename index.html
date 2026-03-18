@@ -59,22 +59,112 @@
         <div>
             <h4>Dataset</h4>
             <p>
-                KAGGLE INFORMATION
+                We utilized a dataset we found online from Kaggle, called the Random Mixture
+                One-shot Dataset (RMOD) found here (TK). RMOD is a drum-focused dataset containing
+                isolated one-shot samples and paired mixtures, which was useful for our project as we
+                focused on modeling short percussion events rather than longer phrases. We specifically
+                focused on snare hits, and utlized the 10,000 files of snare one-shots this dataset provided.
             </p>
         </div>
         <div>
             <h4>Preprocessing</h4>
             <p>
-                Concat information`
+                Our project is centered around training a RAVE model with our own dataset. We wanted to utilize
+                the one-shot data, but found that RAVE was not compatible with short audio clips. To preprocess
+                the data, we contatenated the audio files into either a padded one shot (silence on each end) or
+                a longer recording with multiple one shots. This was dependent on the number of samples we used
+                and type of RAVE model we worked with. See details below.
             </p>
         </div>
         <div>
-            <h4>Training</h4>
-            <p>
-                RAVE information
-            </p>
+            <h4>Model 1</h4>
+            <div>
+              <h4>Parameters</h4>
+              <p>
+                This will contain the preprocessing steps, the number of sample used, 
+                the number of hours trained, 
+              </p>
+            </div>
+            <div>
+              <h4>Training</h4>
+              <p>
+                This will contain the loss graphs, the phases reached, and loss graph
+              </p>
+            </div>
+            <div>
+              <h4>Output</h4>
+              <p>
+                This will contain the audio output 
+              </p>
+            </div>
         </div>
-        
+        <div>
+            <h4>Model 2</h4>
+            <div>
+              <h4>Parameters</h4>
+              <p>
+                This will contain the preprocessing steps, the number of sample used, 
+                the number of hours trained, 
+              </p>
+            </div>
+            <div>
+              <h4>Training</h4>
+              <p>
+                This will contain the loss graphs, the phases reached, and loss graph
+              </p>
+            </div>
+            <div>
+              <h4>Output</h4>
+              <p>
+                This will contain the audio output 
+              </p>
+            </div>
+        </div>
+        <div>
+            <h4>Model 3</h4>
+            <div>
+              <h4>Parameters</h4>
+              <p>
+                This will contain the preprocessing steps, the number of sample used, 
+                the number of hours trained, 
+              </p>
+            </div>
+            <div>
+              <h4>Training</h4>
+              <p>
+                This will contain the loss graphs, the phases reached, and loss graph
+              </p>
+            </div>
+            <div>
+              <h4>Output</h4>
+              <p>
+                This will contain the audio output 
+              </p>
+            </div>
+        </div>
+        <div>
+            <h4>Model 4</h4>
+            <div>
+              <h4>Parameters</h4>
+              <p>
+                This will contain the preprocessing steps, the number of sample used, 
+                the number of hours trained, 
+              </p>
+            </div>
+            <div>
+              <h4>Training</h4>
+              <p>
+                This will contain the loss graphs, the phases reached, and loss graph
+              </p>
+            </div>
+            <div>
+              <h4>Output</h4>
+              <p>
+                This will contain the audio output 
+              </p>
+            </div>
+        </div>
+
       </p>
     </div>
   </body>
